@@ -10,7 +10,7 @@ const MainStack = createStackNavigator();
 export default () => {
     return (
 
-        <MainStack.Navigator mode="card" headerMode="none" initialRouteName={Screens.LOGIN_FORM}>
+        <MainStack.Navigator mode="card" headerMode="none" initialRouteName={Screens.SPLASH}>
             <MainStack.Screen
                 name={Screens.SPLASH}
                 component={SplashScreen}

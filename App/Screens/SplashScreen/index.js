@@ -28,6 +28,7 @@ const SplashScreen = (props) => {
     useEffect(()=>{
       AsyncStorage.getItem("loggedIn").then(res=>
         {
+          console.log(res)
           if(res==null)
           {
             setTimeout(()=>props.navigation.navigate(Screens.LOGIN_FORM),Splash_time)

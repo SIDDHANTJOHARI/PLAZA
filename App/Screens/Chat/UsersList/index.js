@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, FlatList,BackHandler} from 'react-native';
+import {View, Text, FlatList,BackHandler, TouchableOpacity} from 'react-native';
 import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import UserCard from '../../../Components/UserCard';
@@ -7,8 +7,16 @@ import {Colors, Screens} from '../../../Constants/appConstants';
 import users from '../../../Data/User';
 import chats from '../../../Data/Chat';
 import styles from './style';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const UsersList = props => {
+  const logout=()=>
+  {
+    AsyncStorage.removeItem("loggedIn").then(res=>
+      {
+        props.navigation.navigate(Screens.LOGIN_FORM)
+      })
+  }
     const backAction=()=>
     {
         console.log("Clicked")
@@ -53,6 +61,9 @@ const UsersList = props => {
       <View>
         <View style={styles.headContainer}>
           <Text style={styles.head}>Contacts</Text>
+          <TouchableOpacity style={styles.logOutIcon} onPress={logout}>
+          <Icon color={Colors.WHITE} size={25} name="logout"></Icon>
+          </TouchableOpacity>
         </View>
         <Input
           onChangeText={setSearchedText}

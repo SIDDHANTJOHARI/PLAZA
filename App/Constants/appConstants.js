@@ -13,4 +13,4 @@ export const Colors = {
    PRIMARY:"#448aff",
    SECONDARY:"#696969"
 }
-export const Splash_time=1000; //3000 Milliseconds for production 1000 Milliseconds for development
+export const Splash_time=3000; //3000 Milliseconds for production 1000 Milliseconds for development
