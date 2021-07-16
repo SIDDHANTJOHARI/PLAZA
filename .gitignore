@@ -61,6 +61,4 @@ buck-out/
 # Misc
 #
 .env
-android/
-
-*.hprof
+/android/*.hprof
